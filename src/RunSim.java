@@ -28,9 +28,15 @@ public class RunSim {
         if(validArgs){
             //transform a string into a long
             long seed = 0;
-            for (int i = 0; i < args[1].length(); i++) {
-                char ch = args[1].charAt(i);
-                seed = seed + (long)ch;
+            if(args.length == 0){
+                seed = new Random().nextInt();
+            }
+            else{
+                for (int i = 0; i < args[0].length(); i++) {
+                    char ch = args[0].charAt(i);
+                    seed = seed + (long)ch;
+                }
+
             }
             setRand(new Random(seed));
             driverLoop();

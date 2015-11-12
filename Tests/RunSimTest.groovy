@@ -19,8 +19,8 @@ class RunSimTest extends groovy.util.GroovyTestCase {
     //stubs all external functions
     void testSetUpSim(){
         def sim = spy(new RunSim());
-        def args = new String[2];
-        args[1] = "1";
+        def args = new String[1];
+        args[0] = "1";
         doReturn(true).when(sim).ensureArgs(any(String[]));
         doNothing().when(sim).setRand(any(Random));
         doNothing().when(sim).driverLoop();
